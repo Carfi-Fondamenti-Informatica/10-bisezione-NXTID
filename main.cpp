@@ -15,8 +15,7 @@ float f(float x){
 bool v(float a, float b){
     if(f(a)*f(b)>=0) {
         return true;
-    }
-    else {
+    }else {
         return false;
     }
 }
@@ -25,10 +24,6 @@ int main() {
     float x=0;
     float a=0;
     float b=0;
-
-    cout<<"inserire estremi";
-    cin>>a;
-    cin>>b;
 
     do{
         cout<<"inserire estremi";
@@ -43,14 +38,14 @@ int main() {
 
         if (f(x) == 0) {
             break;
+        } else if (v(a,b) == 0){
+            b = x;
         } else {
-            if (v(a,b) == 0) {
-                b = x;
-            } else {
-                a = x;
-            }
-            err = abs((b - a) / 2);
+            a = x;
         }
+
+        err = abs((b - a) / 2);
+
     }while(err>=1e-6);
 
     stampa(x);
