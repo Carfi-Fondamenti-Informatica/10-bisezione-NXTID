@@ -7,7 +7,7 @@ void stampa (float x){
 }
 
 float f(float x){
-    float a=x*x*cos(x)+1;
+    float a=(x*x*cos(x))+1;
     //float a=pow(x,3)-x-2;
     return a;
 }
@@ -26,7 +26,7 @@ int main() {
     float b=0;
 
     do{
-        cout<<"inserire estremi";
+        cout<<"inserire estremi"<<endl;
         cin>>a;
         cin>>b;
     }while(v(a,b));
