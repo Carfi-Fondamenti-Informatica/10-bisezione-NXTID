@@ -12,43 +12,46 @@ float f(float x){
     return a;
 }
 
+bool v(float a, float b){
+    if(f(a)*f(b)>=0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 int main() {
     float x=0;
     float a=0;
     float b=0;
-    bool j=false;
 
     cout<<"inserire estremi";
     cin>>a;
     cin>>b;
 
-    while((f(a)*f(b)) >= 0){
+    do{
         cout<<"inserire estremi";
         cin>>a;
         cin>>b;
-    }
+    }while(v(a,b));
 
-    while(j==false){
-        x=(a+b)/2;
+    float err;
 
-        if(f==0){
-            j=true;
-        }else{
-            if(f(a)*f(b) < 0){
-                b=x;
-            }else{
-                a=x;
+    do {
+        x = (a + b) / 2;
+
+        if (f(x) == 0) {
+            break;
+        } else {
+            if (v(a,b) == 0) {
+                b = x;
+            } else {
+                a = x;
             }
-
-            float err=abs((b-a)/2);
-
-            if(err<=1e-6){
-                j=false;
-            }else{
-                j=true;
-            }
+            err = abs((b - a) / 2);
         }
-    }
+    }while(err>=1e-6);
 
     stampa(x);
 
