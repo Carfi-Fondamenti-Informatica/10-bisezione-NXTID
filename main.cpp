@@ -42,7 +42,7 @@ int main() {
 
         if (f(x) == 0) {
             break;
-        } else if (f(a)*f(b) > 0){
+        } else if ((f(a)*f(b)) > 0){
             b=x;
         } else {
             a=x;
@@ -52,7 +52,7 @@ int main() {
 
     }while(err>=1e-6);
 
-    stampa(f(x));
+    stampa(x);
 
     return 0;
 }
