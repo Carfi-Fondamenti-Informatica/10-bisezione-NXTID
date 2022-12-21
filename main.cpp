@@ -8,7 +8,6 @@ void stampa (float x){
 
 float f(float x){
     float a=(x*x*cos(x))+1;
-    //cout<<"x: "<<x<<"          f(x): "<<a<<endl;
     return a;
 }
 
@@ -31,26 +30,21 @@ int main() {
         cin>>b;
     }while(v(a,b));
 
-    //cout<<"a: "<<a<<endl<<"b: "<<b<<endl;
-
     float err;
 
     do {
         x = (a + b) / 2;
 
-        //cout<<"x: "<<x<<endl;
-
-        if (f(x) == 0) {
+        if (f(a) == 0) {
             break;
-        } else if ((f(a)*f(b)) > 0){
-            b=x;
-        } else {
+        } else if ((f(x)*f(b)) < 0){
             a=x;
+        } else {
+            b=x;
         }
 
         err = abs(((b - a) / 2));
-
-    }while(err>=1e-6);
+    }while(err>=0.000001);
 
     stampa(x);
 
